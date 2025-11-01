@@ -151,7 +151,7 @@ KUSTO_DATABASES = "govexam_eventhouse"
 KUSTO_TABLES = "embeddingtables"
 ---
 ---
-
+```
 ### 🌿 Step 8 – Run the Notebook
 
 Execute all ingestion and embedding cells to process the documents and push them into **Fabric Eventhouse**.
