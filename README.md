@@ -149,6 +149,131 @@ Set the following inside your notebook:
 KUSTO_URL = "<your-eventhouse-cluster-url>"
 KUSTO_DATABASES = "govexam_eventhouse"
 KUSTO_TABLES = "embeddingtables"
+---
+---
 
+### 🌿 Step 8 – Run the Notebook
+
+Execute all ingestion and embedding cells to process the documents and push them into **Fabric Eventhouse**.
+
+After running the notebook, you should see confirmation logs showing how many chunks (text + tables) were processed.
+
+✅ **Expected log example:**
+Loaded 215 text + 54 table chunks = 269 total from IBPS_2025.pdf
+
+
+This confirms that your pipeline successfully extracted, split, embedded, and stored data for the document.
+
+---
+
+### 🧠 Step 9 – Test the RAG Query
+
+Use the **RAG query notebook** to test how the system retrieves and answers questions using stored embeddings.
+
+Run the notebook cells that:
+1. Accept a user query.
+2. Generate an embedding for that query using the `text-embedding-ada-002` model.
+3. Retrieve the most similar chunks from **Eventhouse**.
+4. Combine the retrieved content and pass it to **GPT-4o** for natural-language answering.
+
+🧪 **Example Queries**
+
+- “What is IBPS registration date?”  
+- “Dy. Director (Architect) ka qualification kya hai?”  
+
+💡 *You should see the assistant respond with precise answers based on the indexed PDFs, proving that your RAG pipeline works end-to-end.*
+
+---
+
+## 📊 Dashboard
+
+Use **KQL Dashboards** in Microsoft Fabric to visualize ingestion and data activity.
+
+![KQL Dashboard](images/kql_dashboard.png)
+
+### 📈 Recommended Metrics
+
+| Metric | KQL Query | Description |
+|---------|------------|-------------|
+| **Total Documents** | `count(distinct doc_id)` | Displays the total number of unique PDF documents ingested. |
+| **Language Distribution** | `summarize count() by lang` | Shows how many chunks exist per detected language. |
+| **Content Type Split** | `summarize count() by content_type` | Compares text vs table chunks. |
+| **Daily Ingestion Trend** | `summarize count() by bin(ingest_time, 1d)` | Tracks the number of documents ingested each day. |
+
+💡 *You can customize these visuals in Fabric to create live tiles for total docs, languages, and chunk trends.*
+
+---
+
+## 💬 Output
+
+### ❓ Example Question 1
+
+**What is the online registration period for IBPS RRB 2025?**
+
+**💡 Answer:**  
+The online registration of applications for IBPS RRB 2025 (Recruitment of Officers Scale I–III & Office Assistants in Regional Rural Banks) is scheduled from **01 September 2025 to 21 September 2025.**
+
+---
+
+### ❓ Example Question 2
+
+**Dy. Director (Architect) ka qualification kya hai?**
+
+**💡 Answer:**  
+**Essential Qualifications:**  
+1. Master of Architecture in Urban Design, Conservation, Landscape or Building Engineer.  
+2. Degree in Architecture from a recognized university or equivalent.  
+3. At least 5 years of experience in an Architectural Office in a responsible capacity.  
+4. Membership of the Council of Architecture.  
+
+**Desirable:**  
+- Associate Membership of the Indian Institute of Architects or equivalent.  
+
+---
+
+## 🧾 Conclusion
+
+This project demonstrates how **Azure OpenAI**, **LangChain**, and **Microsoft Fabric Eventhouse** can be combined to create a **Multilingual RAG Virtual Assistant** for government examination preparation in India.  
+It automates data ingestion, embedding, and retrieval from official PDF notifications, delivering accurate, multilingual information to students instantly.
+
+By integrating **Fabric Dashboards** and **Eventhouse**, the system is:
+- Scalable  
+- Easily replicable  
+- Ideal for public data intelligence use cases  
+
+---
+
+---
+
+## ⚖️ License  
+
+This project is released under the [**MIT License**](https://opensource.org/license/mit).  
+You may use, modify, and distribute it freely with proper attribution.
+
+---
+
+## 🤝 Contributing  
+
+We welcome community contributions to improve features and add new language capabilities.  
+
+To contribute:  
+1. Fork this repository.  
+2. Create a feature branch → `git checkout -b feature-name`  
+3. Commit your changes → `git commit -m "Add feature"`  
+4. Push to your branch and open a **Pull Request**.  
+
+For major enhancements, please open an **Issue** first to discuss your proposal.  
+
+💡 **Areas for contribution:**  
+- Adding regional language support  
+- Enhancing dashboard visuals  
+- Optimizing vector storage and query latency  
+
+---
+
+**Author:** [Your Name]  
+📧 your.email@example.com  
+🏫 [Your Institution / Organization]  
+🌐 GitHub Repository: [Your Repo Link]
 
 
