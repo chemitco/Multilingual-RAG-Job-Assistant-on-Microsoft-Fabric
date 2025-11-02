@@ -21,7 +21,7 @@
 ## 🌍 Overview
 
 The **Multilingual RAG-Powered Virtual Assistant** is an AI-driven solution built using **Azure OpenAI**, **LangChain**, and **Microsoft Fabric Eventhouse**.  
-It automates the ingestion of **PDF documents** from **official government websites** (via web scraping) and **manual uploads**, assisting students preparing for **government and competitive exams in India**.
+It automates the ingestion of **PDF documents** from **official government websites** (via web scraping to be included) and **manual uploads**, assisting students preparing for **government and competitive exams in India**.
 
 This assistant provides **accurate, multilingual, and real-time** information such as notifications, eligibility, and exam schedules — directly from verified PDFs.
 
