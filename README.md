@@ -126,20 +126,26 @@ Create a workspace named **Myworkspace** and folder **JobaAssistantApp** in Micr
 
 ### 🧩 Step 2 – Create a Lakehouse  
 Create a Lakehouse named `Document_Database` for storing PDFs and extracted data.
+![Create a Lakehouse ](Images/Step2.jpg)
 
 ### 🧩 Step 3 – Upload PDFs  
 Upload exam PDFs (IBPS, UPSC, DDA, SSC etc.) manually or from a scraping script to:
+![Upload PDFs   ](Images/Step3.jpg)
 
 ### 🧩 Step 4 – Create an Eventhouse  
 Create an **Eventhouse** database named `VectorDatabase`.
+![Create an Eventhouse ](Images/Step4.jpg)
+![Create an Eventhouse ](Images/Step42.jpg)
 
 ### 🧩 Step 5 – Create the Embeddings Table  
 Create a table named `embeddingtables` with columns:  
 `doc_id, document_name, source_url, page_no, chunk_no, content, embedding, chunk_id, content_type, lang, ingest_time`
+![Create the Embeddings Table ](Images/Step5.jpg)
 
 ### 🧩 Step 6 – Import and Configure Notebooks  
 Upload:
-- `AI-Powered Multilingual Job Document Assistant for Recruitment Notifications using Azure OpenAI and Eventhouse.ipynb` 
+- `AI-Powered Multilingual Job Document Assistant for Recruitment Notifications using Azure OpenAI and Eventhouse.ipynb`
+![Import and Configure Notebooks  ](Images/Step6.jpg)
 
 ### 🧩 Step 7 – Connect to Eventhouse  
 Set the following inside your notebook:
@@ -163,6 +169,7 @@ Loaded 215 text + 54 table chunks = 269 total from IBPS_2025.pdf
 
 This confirms that your pipeline successfully extracted, split, embedded, and stored data for the document.
 
+![Run the Notebook](Images/Step8.jpg)
 ---
 
 ### 🧠 Step 9 – Test the RAG Query
@@ -183,7 +190,8 @@ Run the notebook cells that:
 💡 *You should see the assistant respond with precise answers based on the indexed PDFs, proving that your RAG pipeline works end-to-end.*
 
 ---
-
+![ Test the RAG Query](Images/Step91.jpg)
+![ Test the RAG Query](Images/Step92.jpg)
 ## 📊 Dashboard
 
 Use **KQL Dashboards** in Microsoft Fabric to visualize ingestion and data activity.
