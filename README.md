@@ -121,16 +121,17 @@ This step prepares and stores vector embeddings into **Fabric Eventhouse**.
 ## ⚙️ Setup
 
 ### 🧩 Step 1 – Create a Fabric Workspace  
-Create a workspace named **GovExamAssistant** in Microsoft Fabric.
+Create a workspace named **Myworkspace** and folder **JobaAssistantApp** in Microsoft Fabric.
+![Create a Fabric Workspace ](Images/Step1.jpg)
 
 ### 🧩 Step 2 – Create a Lakehouse  
-Create a Lakehouse named `govexam-lakehouse` for storing PDFs and extracted data.
+Create a Lakehouse named `Document_Database` for storing PDFs and extracted data.
 
 ### 🧩 Step 3 – Upload PDFs  
 Upload exam PDFs (IBPS, UPSC, DDA, SSC etc.) manually or from a scraping script to:
 
 ### 🧩 Step 4 – Create an Eventhouse  
-Create an **Eventhouse** database named `govexam_eventhouse`.
+Create an **Eventhouse** database named `VectorDatabase`.
 
 ### 🧩 Step 5 – Create the Embeddings Table  
 Create a table named `embeddingtables` with columns:  
@@ -138,16 +139,14 @@ Create a table named `embeddingtables` with columns:
 
 ### 🧩 Step 6 – Import and Configure Notebooks  
 Upload:
-- `01_ingest_pdfs.ipynb` – extracts & splits data  
-- `02_generate_embeddings.ipynb` – creates embeddings  
-- `03_query_rag_engine.ipynb` – performs Q&A  
+- `AI-Powered Multilingual Job Document Assistant for Recruitment Notifications using Azure OpenAI and Eventhouse.ipynb` 
 
 ### 🧩 Step 7 – Connect to Eventhouse  
 Set the following inside your notebook:
 
 ```python
 KUSTO_URL = "<your-eventhouse-cluster-url>"
-KUSTO_DATABASES = "govexam_eventhouse"
+KUSTO_DATABASES = "VectorDatabase"
 KUSTO_TABLES = "embeddingtables"
 ---
 ---
