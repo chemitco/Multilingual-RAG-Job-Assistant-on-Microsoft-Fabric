@@ -89,7 +89,7 @@ This system integrates **Azure OpenAI**, **LangChain**, and **Microsoft Fabric**
 
 The RAG pipeline consists of two main phases — **indexing** and **retrieval**.
 
-### 🧱 Step 1: Processing the Files and Indexing the Embeddings
+### 🧱 Step 1: File Processing and Embedding Index Creation
 
 This step prepares and stores vector embeddings into **Fabric Eventhouse**.
 
@@ -97,55 +97,53 @@ This step prepares and stores vector embeddings into **Fabric Eventhouse**.
 2. **Extract both text and tables** using `PyPDFLoader` and `pdfplumber`  
 3. **Generate embeddings** using the `text-embedding-ada-002` model  
 4. **Store both text and embeddings** into Eventhouse (`embeddingtables`)
-
-📸 *Add diagram:*  
-![Processing and Indexing Flow](Images/Process%20the%20files%20and%20indexing.jpg)
+ 
+![File Processing and Embedding Index Creation](Images/Process%20the%20files%20and%20indexing.jpg)
 
 ---
 
-### 💬 Step 2: RAG – Getting Answers
+### 💬 Step 2: RAG Pipeline: Generating Accurate Responses
 
 1. Convert the question into an embedding  
 2. Search that embedding against Eventhouse vectors  
 3. Retrieve top-matching chunks  
 4. Combine them with the query and pass to **GPT-4o**  
 5. GPT returns a fluent, multilingual answer  
-
-📸 *Add diagram:*  
-![RAG Retrieval Flow](Images/Rag.jpg)
+ 
+![RAG Pipeline: Generating Accurate Responses](Images/Rag.jpg)
 
 ---
 
 ## ⚙️ Setup
 
-### 🧩 Step 1 – Create a Fabric Workspace  
+### 🧩 Step 1 – Setting Up a Fabric Workspace 
 Create a workspace named **Myworkspace** and folder **JobaAssistantApp** in Microsoft Fabric.
 ![Create a Fabric Workspace ](Images/Step1.jpg)
 
-### 🧩 Step 2 – Create a Lakehouse  
+### 🧩 Step 2 – Setting Up a Lakehouse  
 Create a Lakehouse named `Document_Database` for storing PDFs and extracted data.
 ![Create a Lakehouse ](Images/Step2.jpg)
 
-### 🧩 Step 3 – Upload PDFs  
+### 🧩 Step 3 – Upload PDF Documents 
 Upload exam PDFs (IBPS, UPSC, DDA, SSC etc.) manually or from a scraping script to:
 ![Upload PDFs   ](Images/Step3.jpg)
 
-### 🧩 Step 4 – Create an Eventhouse  
+### 🧩 Step 4 – Create an Eventhouse   
 Create an **Eventhouse** database named `VectorDatabase`.
 ![Create an Eventhouse ](Images/Step4.jpg)
 ![Create an Eventhouse ](Images/Step42.jpg)
 
-### 🧩 Step 5 – Create the Embeddings Table  
+### 🧩 Step 5 – Set Up the Embeddings Table 
 Create a table named `embeddingtables` with columns:  
 `doc_id, document_name, source_url, page_no, chunk_no, content, embedding, chunk_id, content_type, lang, ingest_time`
 ![Create the Embeddings Table ](Images/Step5.jpg)
 
-### 🧩 Step 6 – Import and Configure Notebooks  
+### 🧩 Step 6 – Import and Set Up Notebooks
 Upload:
 - `AI-Powered Multilingual Job Document Assistant for Recruitment Notifications using Azure OpenAI and Eventhouse.ipynb`
 ![Import and Configure Notebooks  ](Images/Step6.jpg)
 
-### 🧩 Step 7 – Connect to Eventhouse  
+### 🧩 Step 7 –Establish a Connection to Eventhouse
 Set the following inside your notebook:
 
 ```python
@@ -155,7 +153,7 @@ KUSTO_TABLES = "embeddingtables"
 ---
 ---
 ```
-### 🌿 Step 8 – Run the Notebook
+### 🌿 Step 8 – Run the Notebook Script
 
 Execute all ingestion and embedding cells to process the documents and push them into **Fabric Eventhouse**.
 
@@ -170,7 +168,7 @@ This confirms that your pipeline successfully extracted, split, embedded, and st
 ![Run the Notebook](Images/Step8.jpg)
 ---
 
-### 🧠 Step 9 – Test the RAG Query
+### 🧠 Step 9 – Execute the RAG Query
 
 Use the **RAG query notebook** to test how the system retrieves and answers questions using stored embeddings.
 
