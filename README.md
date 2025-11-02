@@ -1,4 +1,4 @@
-# 🇮🇳 Multilingual RAG-Powered Virtual Assistant for Government Examination Preparation using Azure OpenAI, LangChain, and Microsoft Fabric Eventhouse
+# Multilingual RAG-Powered Virtual Assistant for Government Examination Preparation using Azure OpenAI, LangChain, and Microsoft Fabric Eventhouse
 
 ---
 
