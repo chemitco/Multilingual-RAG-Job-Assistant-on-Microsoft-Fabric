@@ -77,8 +77,6 @@ These models combine to create a **Retrieval-Augmented Generation (RAG)** pipeli
 
 This system integrates **Azure OpenAI**, **LangChain**, and **Microsoft Fabric** components for an end-to-end RAG workflow.
 
-![Architecture Diagram](images/architecture.png)
-
 ### Components
 1. **Fabric Lakehouse** → stores PDFs and text extractions  
 2. **Fabric Notebooks** → extract, chunk, embed, and upload data  
@@ -196,7 +194,7 @@ Run the notebook cells that:
 
 Use **KQL Dashboards** in Microsoft Fabric to visualize ingestion and data activity.
 
-![KQL Dashboard](images/kql_dashboard.png)
+![KQL Dashboard](Images/Tracker.jpg)
 
 ### 📈 Recommended Metrics
 
@@ -278,9 +276,8 @@ For major enhancements, please open an **Issue** first to discuss your proposal.
 
 ---
 
-**Author:** [Your Name]  
-📧 your.email@example.com  
-🏫 [Your Institution / Organization]  
-🌐 GitHub Repository: [Your Repo Link]
+**Author:** [Shivam Gupta]  
+📧 shivam.edu1997@gmail.com 
+
 
 
