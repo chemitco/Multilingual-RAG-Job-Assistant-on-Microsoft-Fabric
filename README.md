@@ -101,7 +101,7 @@ This step prepares and stores vector embeddings into **Fabric Eventhouse**.
 4. **Store both text and embeddings** into Eventhouse (`embeddingtables`)
 
 📸 *Add diagram:*  
-![Processing and Indexing Flow](Images/Process the files and indexing.jpg)
+![Processing and Indexing Flow](Images/Process%20the%20files%20and%20indexing.jpg)
 
 ---
 
@@ -114,7 +114,7 @@ This step prepares and stores vector embeddings into **Fabric Eventhouse**.
 5. GPT returns a fluent, multilingual answer  
 
 📸 *Add diagram:*  
-![RAG Retrieval Flow](images/Rag.jpg)
+![RAG Retrieval Flow](Images/Rag.jpg)
 
 ---
 
