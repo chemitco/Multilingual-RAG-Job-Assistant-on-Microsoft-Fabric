@@ -1,0 +1,132 @@
+# ------------------------------
+# Multilingual RAG-Powered Virtual Assistant
+# Using Azure OpenAI, LangChain, and Microsoft Fabric Eventhouse
+# ------------------------------
+
+# --- Core Python Environment ---
+python==3.10.14
+numpy==1.26.4
+pandas==2.2.2
+tqdm==4.66.4
+scipy==1.11.4
+scikit-learn==1.5.2
+matplotlib==3.9.2
+seaborn==0.13.2
+nltk==3.9.1
+regex==2024.9.11
+packaging==24.1
+
+# --- Azure + Microsoft Fabric Integration ---
+azure-core==1.33.0
+azure-identity==1.21.0
+azure-kusto-data==5.0.2
+azure-storage-blob==12.22.0
+azure-storage-file-datalake==12.16.0
+adlfs==2024.2.0
+fabric-connection==0.2.0
+powerbiclient==3.1.1
+pythonnet==3.0.3
+
+# --- OpenAI / LangChain / Embeddings ---
+openai==1.31.1
+langchain==0.3.4
+langchain-community==0.3.3
+langchain-openai==0.3.0
+tiktoken==0.7.0
+sentence-transformers==2.7.0
+faiss-cpu==1.8.0
+chromadb==0.5.3
+qdrant-client==1.9.1
+
+# --- PDF + Table Extraction ---
+PyPDF2==3.0.1
+pdfplumber==0.11.4
+pypdf==5.4.0
+tabulate==0.9.0
+camelot-py==0.11.0
+pandasql==0.7.3
+
+# --- Data Serialization / Validation ---
+pydantic==2.11.2
+pydantic_core==2.33.1
+protobuf==3.20.3
+orjson==3.10.16
+
+# --- Web API / Flask / FastAPI (optional if you deploy) ---
+flask==3.0.3
+flask-cors==4.0.1
+fastapi==0.115.0
+uvicorn==0.30.6
+requests==2.32.3
+httpx==0.28.1
+
+# --- Visualization / Dashboarding ---
+plotly==5.24.1
+dash==2.17.1
+dash-core-components==2.0.0
+dash-html-components==2.0.0
+dash-table==5.0.0
+prettytable==3.10.2
+rich==13.7.2
+
+# --- Scheduling / Orchestration ---
+notebookutils==1.1.9.35.20250224.5
+croniter==3.0.3
+joblib==1.4.2
+
+# --- Text / NLP Utilities ---
+sentencepiece==0.1.99
+rouge-score==0.1.2
+transformers==4.44.2
+
+# --- Miscellaneous Dependencies ---
+absl-py==2.1.0
+accelerate==0.33.0
+filelock==3.15.4
+portalocker==2.10.1
+colorlog==6.8.2
+pytz==2024.2
+python-dateutil==2.9.0
+retrying==1.3.4
+schema==0.7.7
+fsspec==2024.6.0
+future==1.0.0
+pathspec==0.12.1
+prettytable==3.10.2
+
+# --- Security & Auth ---
+cryptography==42.0.5
+pyjwt==2.9.0
+requests-oauthlib==1.3.1
+
+# --- PowerBI / Dashboard Embedding (Optional) ---
+powerbiclient==3.1.1
+plotly-express==0.4.1
+
+# --- Notebook & Visualization Environment ---
+notebook==7.2.2
+ipykernel==6.29.5
+nbformat==5.10.4
+nbclient==0.10.0
+qtconsole==5.5.2
+qtpy==2.4.1
+qstylizer==0.2.2
+QtAwesome==1.3.1
+
+# --- AI Optimization / Acceleration ---
+torch==2.3.1
+torchvision==0.18.1
+accelerate==0.33.0
+safetensors==0.4.3
+
+# --- Optional: Vector Optimization / Performance ---
+duckdb==1.1.2
+sqlite-utils==3.37
+fastapi[standard]==0.115.0
+
+# --- For Power Automate / Webhook Integrations (Optional) ---
+python-json-logger==2.0.7
+aiohttp==3.10.2
+websockets==13.0.1
+
+# --- End of File ---
